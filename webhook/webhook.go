@@ -22,10 +22,10 @@ type Body struct {
 		Homepage          string `json:"homepage"`
 		FeedURL           string `json:"feed_url"`
 		AdditionalDetails struct {
-			Language   string        `json:"language"`
-			Categories []interface{} `json:"categories"`
-			Authors    []interface{} `json:"authors"`
-			Copyright  interface{}   `json:"copyright"`
+			Language   string      `json:"language"`
+			Categories []string    `json:"categories"`
+			Authors    []string    `json:"authors"`
+			Copyright  interface{} `json:"copyright"`
 		} `json:"additional_details"`
 	} `json:"feed"`
 	NewEntries []struct {
