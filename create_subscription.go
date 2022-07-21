@@ -21,12 +21,12 @@ type CreateSubscriptionResponse struct {
 // CreateSubscription Create a Subscription.
 // TODO: Make `info` to optional.
 func (c *Client) CreateSubscription(ctx context.Context, url, info string) (*CreateSubscriptionResponse, error) {
-	// TODO: Set header for authentication.
-	spath := fmt.Sprintf("/v1/header/subscribe")
 	q := map[string]string{
 		"url":  url,
 		"info": info,
 	}
+
+	spath := fmt.Sprintf("/v1/header/subscribe")
 	req, err := c.newGETRequest(ctx, spath, q)
 	if err != nil {
 		// TODO: Define custom error type.
